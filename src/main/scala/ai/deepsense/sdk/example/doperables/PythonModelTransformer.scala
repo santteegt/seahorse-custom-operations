@@ -27,9 +27,8 @@ class PythonModelTransformer extends CustomCodeTransformer {
 
   def getComposedCode(userCode: String): String = {
     s"""
-       |import json
        |
-       |PARAMS = json.loads(${getModelParams})
+       |PARAMS = $getModelParams
        |
        |$userCode
     """.stripMargin
