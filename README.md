@@ -1,6 +1,10 @@
-# Seahorse SDK usage example
+# Seahorse Customs Operations for the SLR platform
 
-## Getting started
+- PythonModelTransformation: Allows to execute custom ML models in Python
+
+## Seahorse SDK usage example
+
+### Getting started
 You can create a JAR with the following steps:
 
 1. Run `sbt assembly`. This produces a JAR in `target/scala-2.11` directory.
@@ -9,9 +13,9 @@ docker-compose.yml or Vagrantfile (depending whether you run Docker or Vagrant).
 3. Restart Seahorse (By either `stop`ping and `start`ing `docker-compose` or `halt`ing and `up`ing `vagrant`).
 4. Operations are now visible in Seahorse Workflow Editor.
 
-## Operation examples
+### Operation examples
 
-### Identity Operation
+#### Identity Operation
 This is a simple example designed to show a minimum set of steps needed to create an operation. You can find full source
 in [IdentityOperation.scala](src/main/scala/io/deepsense/sdk/example/IdentityOperation.scala).
 
@@ -47,7 +51,7 @@ Finally, we declare operation's parameters. Our operations does not have any, so
     override def params = Array.empty
 ```
 
-### Random Split
+#### Random Split
 This example is slightly more advanced and more practical. We implement `RandomSplit`, a simpler version of
 `ai.deepsense.deeplang.doperations.Split`, which splits DataFrame in two with given ratio. You can find full source
 in [RandomSplit.scala](src/main/scala/io/deepsense/sdk/example/RandomSplit.scala).

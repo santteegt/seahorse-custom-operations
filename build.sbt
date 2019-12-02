@@ -28,7 +28,8 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "2.0.2" % Provided
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.0.2" % Provided
 libraryDependencies += "org.apache.spark" %% "spark-mllib" % "2.0.2" % Provided
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % Test excludeAll(
+  ExclusionRule("org.scalatest", "scalatest_2.11-2.2.6"))
 
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
 

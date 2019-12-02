@@ -36,7 +36,7 @@ class RandomSplitSpec  extends WordSpec with Matchers {
       val Seq(left : DataFrame, right : DataFrame) = operation.executeUntyped(Vector(df))(HelperMock.executionContext)
 
       val delta = 1000 // 1% of 100000
-      (left.sparkDataFrame.count() - 25000).abs.toInt should be < delta
+      (left.sparkDataFrame.count() - 25000).abs.toInt should be < (delta)
       val leftAndRight = (left.sparkDataFrame.collect().toList ++ right.sparkDataFrame.collect().toList).map {
         case Row(x : Double) => x
       }
